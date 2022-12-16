@@ -1,23 +1,25 @@
 
 import './App.css';
-import Login from './pages/login'
+import Login from './pages/Login'
 import { ReactDOM } from 'react';
-import { Route,  Router,  Routes, BrowserRouter } from 'react-router-dom';
-import Landing from './pages/landing';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
 
 function App() {
-  
+
   return (
-    <div className="App">
-      
-      <Router>
-        <Routes>
-          <Route path='/' element={<Landing/> } />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='/login' element={<Login />} />        
+        <Route path='/register' element={<Register/>} />
+        <Route path='/profile' element={<Profile />} />
+        
+      </Routes>
+    </Router>
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
 export default App;
