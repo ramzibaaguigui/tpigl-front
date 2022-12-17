@@ -1,10 +1,13 @@
 import React from "react";
+import Hero from "../components/sharedComponents/Hero";
+import NavBar from "../components/sharedComponents/NavBar";
 
 
 
 const Landing = () => {
   return (
-    <h1>This is the landing page</h1>
+    
+    <Hero />
   )
 }
 
