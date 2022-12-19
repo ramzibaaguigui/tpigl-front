@@ -91,25 +91,18 @@ const Login  = ({ setIsOpen }) => {
     });
 
     const onSuccess = (res) => {
-        console.log(res)
-        localStorage.setItem('refresh_token',res.tokenId)
-        localStorage.setItem('access_token',res.tokenObj.id_token)
-        async function send(){
-            try {
-                const response = await axios.post('http://127.0.0.1:8000/api/user/google/login/', {
-                    first_name: res.profileObj.familyName,
-                    last_name: res.profileObj.givenName,
-                    username: res.profileObj.name,
-                    phone: '',
-                    email: res.profileObj.email,
-                    profile_picture:res.profileObj.imageUrl
-                })
-                return response;
-
-            } catch (error) {
-                console.log(error.stack);
-            }
-        }
+        const googleLogin = async (r) => {
+            let res = await axios.post(
+              "http://127.0.0.1:8000/api/google-login/",
+              {
+                id_token: r.tokenObj.id_token,
+              }
+            );
+            localStorage.setItem('access_token', res.data.access);
+            localStorage.setItem('refresh_token', res.data.refresh);
+            return await res.status;
+        };
+        googleLogin(res)
     };
     const onFailure = (err) => {
         console.log('failed:', err);
