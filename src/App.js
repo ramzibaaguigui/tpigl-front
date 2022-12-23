@@ -9,6 +9,7 @@ import {
 import Landing from './pages/landing';
 import Navbar from './components/sharedComponents/Navbar';
 import Profile from './pages/Profile'
+import Mappost from './components/Mappost';
 
 
 function App() {
