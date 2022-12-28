@@ -1,13 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Hero from "../components/sharedComponents/Hero";
-import NavBar from "../components/sharedComponents/NavBar";
 
 
 
 const Landing = () => {
   return (
+    <Fragment>
+      <Hero />
+    </Fragment>
     
-    <Hero />
   )
 }
 

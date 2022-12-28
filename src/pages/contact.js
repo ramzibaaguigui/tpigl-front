@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 
 
@@ -7,6 +7,7 @@ const Contact = () => {
   const addresses = ["0799371806", "ka_feghouli@esi.dz", "021212121"];
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -17,6 +18,7 @@ const Contact = () => {
           console.log(result.text);
           setEmail('');
           setName('');
+          setMessage('');
       }, (error) => {
           console.log(error.text);
       });
@@ -45,10 +47,13 @@ const Contact = () => {
         </div>
         <div className="md:basis-7/12 md:pb-5">
           <div className="bg-white rounded-xl shadow-sm p-8">
-          <form ref={form} onSubmit={sendEmail}>
+
+
+            {/* form start here */}
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col">
             <input type="text" name="user_name" placeholder="name" value={name}/>
             <input type="email" name="user_email" placeholder="email" value={email}/>
-            <textarea name="message" />
+            <textarea name="message" placeholder="message here" value={message}/>
             <input type="submit" value="Send" />
           </form>
           </div>

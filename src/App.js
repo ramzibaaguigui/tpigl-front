@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Landing from './pages/landing';
-import Profile from './pages/Profile'
+import Profile from './pages/profile';
 import Contact from "./pages/contact";
 
 
