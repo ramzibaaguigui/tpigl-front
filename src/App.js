@@ -1,4 +1,3 @@
-
 import './App.css';
 import React  from "react";
 import {
@@ -7,17 +6,23 @@ import {
   Route
 } from "react-router-dom";
 import Landing from './pages/landing';
-import Navbar from './components/sharedComponents/Navbar';
 import Profile from './pages/Profile'
+import Contact from "./pages/contact";
 
 
 function App() {
-  
   return (
     <div className="App">
-      
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
+
 
 export default App;

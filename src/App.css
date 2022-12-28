@@ -55,3 +55,8 @@
     transform: rotate(360deg);
   }
 }
+
+ 
+.navbar-list-item {
+  @apply text-theme-white text-base hover:text-theme-orange hover:underline ml-2 mr-2 hover:cursor-pointer hover:duration-200;
+}
