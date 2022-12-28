@@ -4,6 +4,7 @@ const logoAlt = "Logo";
 
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="flex flex-row h-full min-h-fit justify-around align-middle">
             <img src={logoImageSource} alt={logoAlt} className='self-center w-20' />
@@ -16,9 +17,10 @@ const Navbar = () => {
                 <li className={`navbar-list-item`}>Avis</li>
             </ul>
 
-            <h3 className="bg-theme-orange pr-6 pl-6 pt-2
+            <button onClick={() => setIsOpen(true)} className="bg-theme-orange pr-6 pl-6 pt-2
             hover:cursor-pointer hover:text-theme-orange hover:bg-theme-white hover:duration-200 
-            pb-2 mt-3 mb-3 ml-10 mr-10 rounded-full text-theme-white">Sign in</h3>
+            pb-2 mt-3 mb-3 ml-10 mr-10 rounded-full text-theme-white">Sign in</button>
+            {isOpen && <Login setIsOpen={setIsOpen} />}
             
             </div>
         </div>
