@@ -1,14 +1,14 @@
 import React from "react";
+import Hero from "../components/sharedComponents/Hero";
+import NavBar from "../components/sharedComponents/NavBar";
 
 
 
-class Landing extends React.Component {
-    render() {
-        return (
-            <div className="shopping-list"></div>
-          );
-    }
+const Landing = () => {
+  return (
+    
+    <Hero />
+  )
 }
-
 
 export default Landing;
