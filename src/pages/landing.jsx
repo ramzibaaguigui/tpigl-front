@@ -1,11 +1,15 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import Navbar from '../components/sharedComponents/NavBar'
 
 
 class Landing extends React.Component {
     render() {
         return (
-            <div className="shopping-list"></div>
+            <Fragment>
+                <Navbar />
+                <div className="shopping-list">landing page</div>
+            </Fragment>
+            
           );
     }
 }

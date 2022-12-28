@@ -151,10 +151,10 @@ const Login  = ({ setIsOpen }) => {
                     <div className="flex items-center h-5">
                     <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" required/>
                     </div>
-                    <label for="remember" className="ml-2 text-sm font-medium text-gray-900">I agree with the <a href="/#" className="text-blue-600 hover:underline ">terms and conditions</a>.</label>
+                    <label for="remember" className="ml-2 text-sm font-medium text-gray-900">I agree with the <a href="/#" className="text-theme-orange hover:underline ">terms and conditions</a>.</label>
                 </div>
-                <button type="submit" className="block mx-auto mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
-                <label for="remember" className="ml-2 text-sm font-medium text-gray-900">Alredy have account? <button className="text-blue-600 hover:underline " onClick={() => setLog(true)}>Log in</button>.</label>
+                <button type="submit" className="block mx-auto mt-2 text-white bg-theme-orange hover:bg-theme-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                <label for="remember" className="ml-2 text-sm font-medium text-gray-900">Alredy have account? <button className="text-theme-orange hover:underline " onClick={() => setLog(true)}>Log in</button>.</label>
             </form>
         }
             
@@ -168,7 +168,7 @@ const Login  = ({ setIsOpen }) => {
                     <label for="password" className="block mb-1 text-sm font-medium text-gray-900 ">Password</label>
                     <input type="password" id="password" onChange={event => setPassword(event.target.value)} value={password} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5" placeholder="•••••••••" required/>
                 </div> 
-                <button type="submit" className="block mx-auto mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                <button type="submit" className="block mx-auto mt-2 text-white bg-theme-orange hover:bg-theme-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
                 <GoogleLogin
                     clientId={clientId}
                     buttonText="Sign in with Google"
@@ -177,7 +177,7 @@ const Login  = ({ setIsOpen }) => {
                     cookiePolicy={'single_host_origin'}
                     isSignedIn={true}
                 />
-                <label for="remember" className="ml-2 text-sm font-medium text-gray-900">Don't have account? <button className="text-blue-600 hover:underline " onClick={() => setLog(false)}>Sign up</button>.</label>
+                <label for="remember" className="ml-2 text-sm font-medium text-gray-900">Don't have account? <button className="text-theme-orange hover:underline " onClick={() => setLog(false)}>Sign up</button>.</label>
             </form>
         }
             
