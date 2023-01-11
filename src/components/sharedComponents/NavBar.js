@@ -7,11 +7,14 @@ const logoAlt = "Logo";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    console.log('using merwan navbar')
     return (
         <div className="flex flex-row h-full min-h-fit justify-around align-middle">
             <img src={logoImageSource} alt={logoAlt} className='self-center w-20' />
             <div className="flex flex-row">
             <ul className="flex flex-row w-fit h-full self-center items-center">
+                using merwan 
+                
                 <li className={`navbar-list-item`}>Home</li>
                 <li className={`navbar-list-item`}>Booking</li>
                 <li className={`navbar-list-item`}>Contact</li>

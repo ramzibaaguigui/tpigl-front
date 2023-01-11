@@ -10,11 +10,8 @@ function App() {
       <Routes>
         <Route path='/profile' element={<Profile />} />
         <Route path='/test' element={<Test />} />
-        <Route path='/test2' element={<Test2 />} />
-        
       </Routes>
     </Router>
-  );
+)
 }
-
-export default App;
+export default App
