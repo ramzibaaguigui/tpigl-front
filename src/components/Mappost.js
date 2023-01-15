@@ -23,8 +23,8 @@ export default class DisplayMapClass extends React.Component {
         pixelRatio: window.devicePixelRatio || 1
       }
     );
-    var parisMarker = new H.map.Marker({ lat: this.props.lat, lng: this.props.lng });
-    map.addObject(parisMarker);
+    var Marker = new H.map.Marker({ lat: this.props.lat, lng: this.props.lng });
+    map.addObject(Marker);
     const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
     const ui = H.ui.UI.createDefault(map, defaultLayers,'fr-FR');

@@ -1,4 +1,4 @@
-import React, { Fragment ,useState , useRef} from 'react'
+import React, { Fragment ,useState , useRef, useEffect} from 'react'
 import axiosInstance from '../api';
 
 
@@ -23,29 +23,47 @@ function Addpost() {
     
 
     async function ajouter(e)  {
+        let lat = 0
+        let long=0
         e.preventDefault();
         if (imgs.length) {
-            try {
-                const response = await axiosInstance.post('/post/create/', {
-                    category: category,
-                    type: type,
-                    surface: surface,
-                    prix: prix,
-                    description: description,
-                    images:imgs
+
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    lat =  position.coords.latitude
+                    long =  position.coords.longitude
                 });
-                axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
-                console.log(response)
-                return response.data;
-            } catch (error) {
-                throw error;
-            }
+                try {
+                    const response = await axiosInstance.post('/post/create/', {
+                        category: category,
+                        type: type,
+                        surface: surface,
+                        prix: prix,
+                        description: description,
+                        images:imgs,
+                        lat :lat,
+                        long :long
+                    });
+                    axiosInstance.defaults.headers['Authorization'] = "JWT " + response.data.access;
+                    console.log(response)
+                    return response.data;
+                } catch (error) {
+                    throw error;
+                }
+        }else{
+            alert("geolocation isn't available")
+        }
         } else {
             alert('add picture')
         }
         
     }
-
+    useEffect(()=>{
+        navigator.geolocation.getCurrentPosition(function(position) {
+            console.log(position.coords.latitude)
+            console.log(position.coords.longitude)
+        });
+    })
     
   return (
     <Fragment>
