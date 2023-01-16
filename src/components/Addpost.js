@@ -2,7 +2,7 @@ import React, { Fragment ,useState , useRef, useEffect} from 'react'
 import axiosInstance from '../api';
 
 
-function Addpost() {
+const Addpost = () => {
     const [add, setadd] = useState(true);
     const [category, setcategory] = useState('Vente');
     const [type, settype] = useState('');

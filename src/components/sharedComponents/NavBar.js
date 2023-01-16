@@ -5,6 +5,7 @@ import logo from '../../images/logo.png'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    console.log('using merwan navbar')
     return (
         
         <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
@@ -40,6 +41,7 @@ const Navbar = () => {
                     pb-2 rounded-full text-theme-white">Sign in</button>
                     {isOpen && <Login setIsOpen={setIsOpen} />}
                 </li>
+
             </ul>
             </div>
         </div>
