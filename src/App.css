@@ -38,7 +38,7 @@
     transform: translate(-50%, -50%);
 }
 
-.login label{
+.login  label{
   text-align: left;
   margin-left: 20px;
 }
@@ -47,6 +47,8 @@
 .H_imprint {
   display: none;
 }
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

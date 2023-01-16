@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import Navbar from '../components/sharedComponents/NavBar'
-
-
 class Landing extends React.Component {
     render() {
         return (
