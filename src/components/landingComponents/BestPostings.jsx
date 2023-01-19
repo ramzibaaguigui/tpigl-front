@@ -11,7 +11,7 @@ const BestPostings = () => {
 
             <div className="flex flex-row w-full h-fit justify-center">
                 <PostingCard
-                    estateImageSource={require('./../../public/images/hero_background.png')}
+                    estateImageSource={"https://images.pexels.com/photos/8755443/pexels-photo-8755443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
                     postingType={'Rent'}
                     estateTitle={'Villa a vendre bonne '}
                     estateLocation={'Tebessa'}
@@ -19,8 +19,6 @@ const BestPostings = () => {
                     estateRef={'REF: 50'}
                     estateArea={'98.98m2'}
                 />
-                <PostingCard />
-                <PostingCard />
             </div>
         </div>
     );

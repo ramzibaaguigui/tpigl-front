@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-const likeImageSource = require('./../../public/icons/ic_like.png')
-const likedImageSource = require('./../../public/icons/ic_liked.png')
+import likeImageSource from './../../images/ic_like.png'
+import likedImageSource from './../../images/ic_liked.png'
 const likeAlt = 'Like'
 const likedAlt = 'Dislike'
 const LikeButton = ({ liked, onClick }) => {

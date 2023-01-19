@@ -112,8 +112,8 @@ const Login  = ({ setIsOpen }) => {
 
     return (
       <>
-        <div className="w-full h-screen absolute top-0 left-0" onClick={() => setIsOpen(false)} />
-        <div className="login bg-white fixed rounded-xl drop-shadow-2xl w-9/12 max-w-screen-sm p-8">
+        <div className="w-full h-screen absolute top-0 left-0 backdrop-blur-sm z-40" onClick={() => setIsOpen(false)} />
+        <div className="login bg-white fixed rounded-xl drop-shadow-2xl w-9/12 max-w-screen-sm p-8 z-50">
           
         {!log &&
             <form  onSubmit={register}>
@@ -159,17 +159,19 @@ const Login  = ({ setIsOpen }) => {
         }
             
         {log && 
-            <form onSubmit={login}>
+            <form onSubmit={login} className="flex flex-col">
                 <div className="mb-1">
                     <label for="email" className="block mb-1 text-sm font-medium text-gray-900 ">Email address</label>
-                    <input type="email" id="email" onChange={event => setEmail(event.target.value)} value={email} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5" placeholder="exemple@gmail.com" required/>
+                    <input type="email" id="email" onChange={event => setEmail(event.target.value)} value={email} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="exemple@gmail.com" required/>
                 </div> 
                 <div className="mb-1">
                     <label for="password" className="block mb-1 text-sm font-medium text-gray-900 ">Password</label>
                     <input type="password" id="password" onChange={event => setPassword(event.target.value)} value={password} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5" placeholder="•••••••••" required/>
                 </div> 
                 <button type="submit" className="block mx-auto mt-2 text-white bg-theme-orange hover:bg-theme-orange focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+                <div className='flex items-center justify-evenly'>
                 <GoogleLogin
+                    className='w-fit mt-4'
                     clientId={clientId}
                     buttonText="Sign in with Google"
                     onSuccess={onSuccess}
@@ -178,7 +180,10 @@ const Login  = ({ setIsOpen }) => {
                     isSignedIn={true}
                 />
                 <label for="remember" className="ml-2 text-sm font-medium text-gray-900">Don't have account? <button className="text-theme-orange hover:underline " onClick={() => setLog(false)}>Sign up</button>.</label>
-            </form>
+            
+                </div>
+                
+                </form>
         }
             
         </div>

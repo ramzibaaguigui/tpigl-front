@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&family=Share:wght@400;700&display=swap');
+
 body {
   margin: 0;
   font-family: 'Hind Siliguri', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Share', cursive;
 }
 
 code {

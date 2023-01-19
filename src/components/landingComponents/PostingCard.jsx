@@ -1,12 +1,12 @@
 
-const likeImageSource = require('./../../public/icons/ic_like.png')
-const likedImageSource = require('./../../public/icons/ic_like.png');
+import likeImageSource from './../../images/ic_like.png'
+import likedImageSource from './../../images/ic_liked.png'
 
 
 const PostingCard = ({postingType, isLiked, estateTitle, estateLocation, estateArea, estatePrice, estateRef, estateImageSource,
 estateImageAlt}) => {
     return (
-        <div className="flex flex-col shadow-xl p-4 rounded-sm mr-4 ml-4 min-w-max overflow-x-clip">
+        <div className="flex flex-col shadow-xl p-4 rounded-md mr-4 ml-4 my-8 w-fit overflow-x-clip">
             <img src={estateImageSource} alt={estateImageAlt}
             className="rounded-lg object-cover bg-theme-orange h-72 w-72"></img>
             <div className="flex flex-row justify-between p-2 align-middle">

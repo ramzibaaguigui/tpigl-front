@@ -1,11 +1,13 @@
 import React, { Fragment } from "react";
 
 import Navbar from "../components/sharedComponents/NavBar";
-import Main from "../components/Main";
-import About from "../components/About";
-import Query from "../components/Query";
+import Main from "../components/landingComponents/Main";
+import About from "../components/landingComponents/About";
+import Query from "../components/landingComponents/Query";
 import Footer from "../components/sharedComponents/Footer";
-import Services from "../components/Services";
+import Services from "../components/landingComponents/Services";
+import Posts from "../components/landingComponents/Posts";
+
 
 
 class Landing extends React.Component {
@@ -16,8 +18,10 @@ class Landing extends React.Component {
         <Main />
         <About />
         <Services />
+        <Posts/>
         <Query />
         <Footer />
+        
       </Fragment>
     );
   }
