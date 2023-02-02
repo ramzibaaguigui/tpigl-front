@@ -32,7 +32,6 @@ function Filtrer() {
   },[s,type])
   
 
-  const imageUrl = 'http://localhost:3000/../../../../igl/backend/'
 
 
 
@@ -112,7 +111,8 @@ function Filtrer() {
         <ProductCard
           key={item.id}
           product={{
-            image : item.img,
+            id : item.Post.id,
+            image : item.img.replace('http://127.0.0.1:8000/','http://127.0.0.1:8000/api/'),
             wilaya: item.Post.adress.commune.wilaya.name,
             commune:item.Post.adress.commune.name,
             description: item.Post.description,

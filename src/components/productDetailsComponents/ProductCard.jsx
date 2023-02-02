@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /*
 import ActionButton from "../uiComponents/ActionButton";
 import LikeButton from "../uiComponents/LikeButton";
@@ -55,7 +57,7 @@ const ProductCard = ({ product }) => {
       </div>
     </div>
     */
-    <div
+    <Link to={`../post/${product.id}`}
       tabindex="0"
       class="rounded-lg shadow-lg overflow-hidden focus:outline-none mx-2 my-5  w-72 xl:mb-0 mb-8"
     >
@@ -110,7 +112,7 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 export default ProductCard;

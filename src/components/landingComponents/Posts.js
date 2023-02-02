@@ -8,7 +8,6 @@ import axios from "axios";
 
 function Posts() {
 
-  const [result, setResult] = useState();
   const [elements, setelements] = useState();
 useEffect(()=>{
   const Posts = async ()=> {
@@ -16,11 +15,12 @@ useEffect(()=>{
       const { data } = await axios.get(
         `http://127.0.0.1:8000/api/posts/`
       );
-      setResult(data.results);
-      setelements([...elements, result.slice(0, 4)])
-      setelements([...elements, result.slice(4, 8)])
-      setelements([...elements, result.slice(8, 12)])
-      setelements([...elements, result.slice(12, 16)])
+      let l1 = data.results.slice(0, 4)
+      let l2 = data.results.slice(4, 8)
+      let l3 = data.results.slice(8, 12)
+      let l4 = data.results.slice(12, 16)
+      let filallist = [l1,l2,l3,l4]
+      setelements(filallist)
     } catch (error) {
       console.log(error.stack);
     }
@@ -50,6 +50,7 @@ useEffect(()=>{
             <ProductCard
               key={index}
               product={{
+                id : item.Post.id,
                 image : item.img,
                 wilaya: item.Post.adress.commune.wilaya.name,
                 commune:item.Post.adress.commune.name,
@@ -58,6 +59,7 @@ useEffect(()=>{
                 type:item.Post.category
               }}
             />))}
+            
           </div>
         )) : null}
       </Slide>
