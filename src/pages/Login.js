@@ -12,7 +12,7 @@ const Login  = ({ setIsOpen }) => {
     const [password, setPassword] = useState('');
 
 
-    //signup variable9
+    //signup variable
     const [first, setFirst] = useState('');
     const [last, setLast] = useState('');
     const [username, setUsername] = useState('');
@@ -53,7 +53,6 @@ const Login  = ({ setIsOpen }) => {
         } catch (error) {
             console.log(error.stack);
         }
-        
     }
 
 
@@ -74,6 +73,7 @@ const Login  = ({ setIsOpen }) => {
         } catch (error) {
             throw error;
         }
+       
     }
 
 
@@ -100,7 +100,9 @@ const Login  = ({ setIsOpen }) => {
             );
             localStorage.setItem('access_token', res.data.access);
             localStorage.setItem('refresh_token', res.data.refresh);
+            setIsOpen(false)
             return await res.status;
+            
         };
         googleLogin(res)
     };

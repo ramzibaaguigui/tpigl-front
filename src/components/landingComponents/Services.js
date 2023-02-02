@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../images/3.jpg";
+import img from "../../images/3.png";
 import { FaBuysellads } from "react-icons/fa";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { MdOutlineChangeCircle } from "react-icons/md";
@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 function Services() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" id="service">
       <div className="flex-1">
         <h1 className="text-5xl font-bold my-8 leading-tight text-center">
           NOS SERVICES

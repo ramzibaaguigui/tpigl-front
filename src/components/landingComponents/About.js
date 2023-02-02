@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 function About() {
   return (
-    <main className=" my-32 flex flex-col lg:flex-row  px-24 xl:px-32 ">
+    <main className=" my-32 flex flex-col lg:flex-row  px-24 xl:px-32 " id="about">
       <div className="imgContainer mainImg flex-1">
         <motion.img
           initial={{ opacity: 0, scale: 0 }}

@@ -28,7 +28,7 @@ function Profile() {
 
   return (
     <Fragment>
-      <Navbar currentPage="announces" />
+      <Navbar currentPage="offres" />
       <div className="flex flex-wrap mx-auto my-10 gap-3 justify-center">
         {post.length ? (
           post.map((item) => (
@@ -46,7 +46,7 @@ function Profile() {
           ))
         ) : (
           <div role="mt-10">
-           <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4">No announce yet</p>
+           <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4">No offre yet</p>
           </div>
         )}
       </div>
