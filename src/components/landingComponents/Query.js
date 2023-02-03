@@ -3,7 +3,7 @@ import img from '../../images/4.png'
 
 function Query() {
   return (
-    <main className=" mt-16 flex flex-col items-center gap-4 lg:flex-row  px-24 xl:px-32">
+    <main className=" mt-16 flex flex-col items-center gap-4 lg:flex-row  px-24 xl:px-32" id='contact'>
         <div className="imgContainer mainImg flex-1">
             <img
             src={img}

@@ -5,7 +5,7 @@ import Typed from "react-typed"
 
 function Main() {
   return (
-    <main className=" mt-16 flex flex-col gap-4 lg:flex-row  px-24 xl:px-32">
+    <main className=" mt-16 flex flex-col gap-4 lg:flex-row  px-24 xl:px-32" id="home">
       <div className="flex-1">
         <h2 className="text-2xl font-bold text-theme-orange">
           Résidentiel et bureau{" "}

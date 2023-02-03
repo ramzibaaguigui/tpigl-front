@@ -9,6 +9,7 @@ const AddProduct = () => {
             <ProductCriteriaSection />
             <div className="h-4"></div>
             <ProductCoordinatesSection />
+            
         </div>
     )
 
