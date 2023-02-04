@@ -34,7 +34,7 @@ const PhotoItemView = ({ imageSource = smapleImageSource, onDeleteClicked }) => 
 
     return (
         <div className="m-2 w-40 h-40 border-2 border-black relative">
-
+            <img className="absolute right-0 top-0 w-4 h-4" src=""></img>
             <img className="w-full h-full bg-black object-scale-down" src={imageSource} />
         </div>
     )

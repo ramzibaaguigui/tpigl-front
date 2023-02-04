@@ -5,18 +5,18 @@ import TitleTextField from "./TitleTextField";
 const productCriteriaNumber = '02';
 const productCriteriaTitle = 'Product Criteria';
 
-const ProductCriteriaSection = () => {
+const ProductCriteriaSection = ({onTypeChanged, onSurfaceChanged, onPrixChanged, onTypeOffreChanged}) => {
     return (
 
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
             <SectionHeader
                 number={productCriteriaNumber}
                 title={productCriteriaTitle} />
 
-            <TitleTextField placeholder={'Type du bien'} />
-            <TitleTextField placeholder={'Surface'} />
-            <TitleTextField placeholder={'Prix'} />
-            <TitleTextField placeholder={`Type d'offre`} />
+            <TitleTextField placeholder={'Type du bien'} onInputChange={onTypeChanged}  />
+            <TitleTextField placeholder={'Surface'} onInputChange={onSurfaceChanged} />
+            <TitleTextField placeholder={'Prix'} onInputChange={onPrixChanged} />
+            <TitleTextField placeholder={`Type d'offre`} onInputChange={onTypeOffreChanged} />
             
 
         </div>

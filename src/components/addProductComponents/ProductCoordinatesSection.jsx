@@ -15,14 +15,14 @@ const villeString = 'Ville'
 const numeroTelephoneString = 'Numero du telephone'
 
 
-function ProductCoordinatesSection() {
+function ProductCoordinatesSection({onWilayaSelected, onCommuneSelected}) {
 
-    const [selectedWilaya, setSelectedWilaya] = useState('');
+{ /*   const [selectedWilaya, setSelectedWilaya] = useState('');
     const [selectedCommune, setSelectedCommune] = useState('');
     const [ville, setVille] = useState('')
     const [telephone, setTelephone] = useState('')
-
-
+*/}
+    
     return (
         <div className="flex flex-col w-full">
 

@@ -3,14 +3,7 @@ import TextInputField from './TextInputField';
 import TitleTextField from './TitleTextField';
 import SectionHeader from './SectionHeader'
 
-function ProductDescriptionSection() {
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-
-    const onTitleChanged = event => setTitle(event.target.value);
-    const onDescriptionChanged = event => setDescription(event.target.value);
-
-
+function ProductDescriptionSection({onTitleChanged, onDescriptionChanged}) {
 
     return (
         <div className="flex flex-col w-full">
