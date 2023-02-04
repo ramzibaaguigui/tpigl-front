@@ -17,7 +17,7 @@ const ProductCriteriaSection = () => {
             <TitleTextField placeholder={'Surface'} />
             <TitleTextField placeholder={'Prix'} />
             <TitleTextField placeholder={`Type d'offre`} />
-
+            
 
         </div>
 
