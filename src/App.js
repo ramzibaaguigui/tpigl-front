@@ -5,6 +5,7 @@ import Profile from './pages/profile';
 import Search from './pages/Search';
 import Offres from './pages/Offres';
 import Detail from './pages/Detail'
+import AddProduct from './pages/AddProduct'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/search' element={<Search/>} />
         <Route path='/offres' element={<Offres/>} />
         <Route path='/post/:postId' element={<Detail/>} />
+        <Route path='/addProduct' element={<AddProduct/> }/>
       </Routes>
     </Router>
 )

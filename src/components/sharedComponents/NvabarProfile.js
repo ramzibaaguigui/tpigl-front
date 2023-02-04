@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Login from "../../pages/Login";
 import logo from '../../images/logo.png'
-import { Link} from 'react-router-dom'; 
+import { Link, NavLink} from 'react-router-dom'; 
+import logout from "../../images/logout.png";
 
 
 const Navbar = ({ currentPage }) => {
@@ -9,7 +10,9 @@ const Navbar = ({ currentPage }) => {
     const [isOpen, setIsOpen] = useState(false);
     const user = localStorage.getItem('access_token');
     
-    
+    if (user == null) {
+        return <NavLink to="/" />;
+    }
 
     
     return (
@@ -18,7 +21,7 @@ const Navbar = ({ currentPage }) => {
         <div class="container flex flex-wrap items-center justify-between mx-auto px-1 lg:px-32 ">
             <Link to="/" class="flex items-center">
                 <img src={logo} class="h-6 mr-3 sm:h-9" alt="Logo" />
-                <span class="self-center text-xl font-semibold whitespace-nowrap ">logo</span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-theme-orange">Immob</span>
             </Link>
             <button onClick={() => nav = setnav(!nav) }data-collapse-toggle="navbar-default" type="button" class=" z-50 inline-flex items-center p-2 ml-3 text-sm text-black rounded-lg md:hidden hover:bg-theme-orange hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
@@ -37,20 +40,20 @@ const Navbar = ({ currentPage }) => {
                 <li>
                 <Link to="/offres"  class={currentPage === "offres" ? "block text-xl py-2 pl-3 pr-4 text-white bg-theme-orange rounded md:bg-transparent md:text-theme-orange md:p-0 dark:text-white":"block text-xl py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme-orange md:p-0"}>Mes Offres</Link>
                 </li>
-                {user ? (
-                    <li>
-                    <button onClick={() => {localStorage.clear();window.location.reload(false);}} className="bg-theme-orange text-xl pr-6 pl-6 pt-2
-                    hover:cursor-pointer hover:text-theme-orange hover:bg-theme-white hover:border hover:border-theme-orange hover:duration-200 
-                    pb-2 rounded-full text-theme-white">Sign out</button>
-                    
-                    </li>):
-                    (<li>
-                    <button onClick={() => setIsOpen(true)} className="bg-theme-orange text-xl pr-6 pl-6 pt-2
-                    hover:cursor-pointer hover:text-theme-orange hover:bg-theme-white hover:border hover:border-theme-orange hover:duration-200 
-                    pb-2 rounded-full text-theme-white">Sign in</button>
-                    {isOpen && <Login setIsOpen={setIsOpen} />}
+                <li>
+                <Link to="/addproduct"  class={currentPage === "add" ? "block text-xl py-2 pl-3 pr-4 text-white bg-theme-orange rounded md:bg-transparent md:text-theme-orange md:p-0 dark:text-white":"block text-xl py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-theme-orange md:p-0"}>Add Announce</Link>
                 </li>
-                )}
+                    <li>
+                    <img
+                    onClick={() => {
+                      localStorage.clear();
+                      window.location.reload(false);
+                    }}
+                    src={logout}
+                    className="w-8 "
+                  />
+                    
+                    </li>
 
             </ul>
             </div>

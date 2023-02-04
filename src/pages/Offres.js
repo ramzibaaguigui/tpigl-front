@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import axiosInstance from "../api";
-import ProductCard from "../components/productDetailsComponents/ProductCard";
+import OffreCard from "../components/productDetailsComponents/OffreCard";
 import Navbar from "../components/sharedComponents/NvabarProfile";
 
 function Profile() {
@@ -12,7 +12,8 @@ function Profile() {
   useEffect(() => {
     async function getpost() {
       try {
-        const response = await axiosInstance.get("/mypost/");
+        const response = await axiosInstance.get("/myoffre/")
+        
         setpost(response.data.results);
         return response.data;
       } catch (error) {
@@ -22,6 +23,7 @@ function Profile() {
 
     getpost();
   }, []);
+  
   if (user == null) {
     return <Navigate to="/" />;
   }
@@ -29,24 +31,26 @@ function Profile() {
   return (
     <Fragment>
       <Navbar currentPage="offres" />
-      <div className="flex flex-wrap mx-auto my-10 gap-3 justify-center">
+      <div className="container flex flex-wrap mx-auto my-10 mt-20 gap-3 justify-center">
         {post.length ? (
           post.map((item) => (
-            <ProductCard
+            <OffreCard
               key={item.id}
               product={{
-                image: item.img,
-                wilaya: item.Post.adress.commune.wilaya.name,
-                commune: item.Post.adress.commune.name,
-                description: item.Post.description,
-                price: item.Post.prix,
-                type: item.Post.category,
+                id : item.post.id,
+                prix : item.prix,
+                phone : item.phone,
+                description : item.description,
+                img : item.sender.profile_picture.replace(
+                  "http://127.0.0.1:8000/",
+                  "http://127.0.0.1:8000/api/"
+                ),
               }}
             />
           ))
         ) : (
           <div role="mt-10">
-           <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4">No offre yet</p>
+           <p class=" text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4">No offre yet</p>
           </div>
         )}
       </div>

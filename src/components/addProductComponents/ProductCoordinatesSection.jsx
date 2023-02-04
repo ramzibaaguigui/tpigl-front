@@ -3,26 +3,58 @@ import AddProductInputField from "./AddProductInputField";
 import SectionHeader from "./SectionHeader";
 import TitleTextField from "./TitleTextField";
 import DropdownSelect from "./SelectOption"
-import { useState } from "react";
+import React, { useState,  useEffect } from "react";
+
 
 const coordinatesSectionNumber = '03'
 const coordinatesSectionTitle = 'Coordonnees'
 
-const wilayas = ['adrar', 'chlef', 'leghouat', 'other']
-const communes = ['adrar', 'chlef', 'other']
 
-const villeString = 'Ville'
 const numeroTelephoneString = 'Numero du telephone'
 
 
-function ProductCoordinatesSection() {
+function ProductCoordinatesSection({sendData}) {
 
-    const [selectedWilaya, setSelectedWilaya] = useState('');
-    const [selectedCommune, setSelectedCommune] = useState('');
-    const [ville, setVille] = useState('')
     const [telephone, setTelephone] = useState('')
 
+    useEffect(()=>{
+      sendData(telephone)
+},[telephone])
+/*
+    const [wilayas, setWilayas] = useState();
+    const [communs, setcommunes] = useState();
+    useEffect(() => {
+    
 
+        const getwilayas = async () => {
+          try {
+            const { data } = await axios.get(
+              `http://127.0.0.1:8000/api/getwilayas/`
+            );
+            setWilayas(data.results);
+          } catch (error) {
+            console.log(error.stack);
+          }
+        };
+        getwilayas()
+      }, []);
+
+   useEffect(() => {   
+
+      const getcommunes = async () => {
+        try {
+          const { data } = await axiosInstance.get(
+            `http://127.0.0.1:8000/api/getcommunes/`
+          );
+          setcommunes(data.results);
+          console.log(data.results)
+        } catch (error) {
+          console.log(error.stack);
+        }
+      };
+      getcommunes()
+    }, [selectedWilaya]);
+*/
     return (
         <div className="flex flex-col w-full">
 
@@ -31,13 +63,6 @@ function ProductCoordinatesSection() {
                 number={coordinatesSectionNumber}
                 title={coordinatesSectionTitle} />
 
-            <DropdownSelect options={wilayas} onItemSelected={
-                (event) => { setSelectedWilaya(wilayas[event.target.value]) }
-            } />
-            <DropdownSelect options={communes}
-                onItemSelected={(event) => setSelectedCommune(communes[event.target.value])} />
-            <TitleTextField placeholder={villeString}
-                onInputChange={event => setVille(event.target.value)} />
             <TitleTextField placeholder={numeroTelephoneString}
                 onInputChange={event => setTelephone(event.target.value)} />
 
