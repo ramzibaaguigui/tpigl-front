@@ -18,7 +18,7 @@ function Filtrer() {
     const Search = async () => {
       try {
         const { data } = await axios.get(
-          `http://127.0.0.1:8000/api/search/?s=${s}&type=${type}&wilaya=${wilaya}`
+          `http://127.0.0.1:8000/api/search/?s=${s}&type=${type}&wilaya=${wilaya}&first=${first}&last=${last}`
         );
         setResult(data.results);
       } catch (error) {
@@ -131,6 +131,7 @@ function Filtrer() {
               key={item.id}
               product={{
                 id: item.Post.id,
+                del:false,
                 image: item.img.replace(
                   "http://127.0.0.1:8000/",
                   "http://127.0.0.1:8000/api/"

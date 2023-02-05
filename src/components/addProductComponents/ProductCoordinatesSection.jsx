@@ -3,6 +3,7 @@ import AddProductInputField from "./AddProductInputField";
 import SectionHeader from "./SectionHeader";
 import TitleTextField from "./TitleTextField";
 import DropdownSelect from "./SelectOption"
+import axios from "axios";
 import React, { useState,  useEffect } from "react";
 
 
@@ -24,8 +25,6 @@ function ProductCoordinatesSection({sendData}) {
     const [wilayas, setWilayas] = useState();
     const [communs, setcommunes] = useState();
     useEffect(() => {
-    
-
         const getwilayas = async () => {
           try {
             const { data } = await axios.get(
@@ -40,10 +39,9 @@ function ProductCoordinatesSection({sendData}) {
       }, []);
 
    useEffect(() => {   
-
       const getcommunes = async () => {
         try {
-          const { data } = await axiosInstance.get(
+          const { data } = await axios.get(
             `http://127.0.0.1:8000/api/getcommunes/`
           );
           setcommunes(data.results);
@@ -53,8 +51,8 @@ function ProductCoordinatesSection({sendData}) {
         }
       };
       getcommunes()
-    }, [selectedWilaya]);
-*/
+    }, [selectedWilaya]);*/
+
     return (
         <div className="flex flex-col w-full">
 
@@ -62,7 +60,7 @@ function ProductCoordinatesSection({sendData}) {
             <SectionHeader
                 number={coordinatesSectionNumber}
                 title={coordinatesSectionTitle} />
-
+           
             <TitleTextField placeholder={numeroTelephoneString}
                 onInputChange={event => setTelephone(event.target.value)} />
 
