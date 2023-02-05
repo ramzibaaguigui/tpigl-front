@@ -26,6 +26,8 @@ function Profile() {
     return <Navigate to="/" />;
   }
 
+
+
   return (
     <Fragment>
       <Navbar currentPage="announces" />
@@ -35,7 +37,18 @@ function Profile() {
             <ProductCard
               key={item.id}
               product={{
-                image: item.img,
+                id: item.Post.id,
+                del: true,
+                image: item.img.startsWith("http://127.0.0.1:8000/media/blob")
+                  ? decodeURIComponent(
+                      item.img.split("/")[
+                        item.img.split("/").indexOf("media") + 1
+                      ]
+                    )
+                  : item.img.replace(
+                      "http://127.0.0.1:8000/",
+                      "http://127.0.0.1:8000/api/"
+                    ),
                 wilaya: item.Post.adress.commune.wilaya.name,
                 commune: item.Post.adress.commune.name,
                 description: item.Post.description,
@@ -46,7 +59,9 @@ function Profile() {
           ))
         ) : (
           <div role="mt-10">
-           <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4">No announce yet</p>
+            <p class="text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4">
+              No announce yet
+            </p>
           </div>
         )}
       </div>
