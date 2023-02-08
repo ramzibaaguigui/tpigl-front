@@ -22,7 +22,7 @@ const AddPhoto = ({ handleChange }) => {
     return (
         <div className="hidden m-2 w-40 h-40 ">
             <input id="file-selector" className="display-none w-40 h-40"
-             type={'file'}
+             type={'file'} name={'input-add-photo'}
                 accept={"image/png, image/jpeg"}
                 onChange={event => handleChange(event)} />
                 

@@ -108,7 +108,7 @@ const AddProduct = () => {
             <ProductCoordinatesSection sendData={handlephone} />
             <div className="h-4" ></div>
             <ProductPhotosSection sendData={handlephoto}/>
-            <button onClick={() => {ajouter()}} className='block uppercase mx-auto shadow bg-theme-orange focus:shadow-outline focus:outline-none text-white text-xl py-3 px-10 rounded'>ADD Announce</button>
+            <button name={'button-add-product'} onClick={() => {ajouter()}} className='block uppercase mx-auto shadow bg-theme-orange focus:shadow-outline focus:outline-none text-white text-xl py-3 px-10 rounded'>ADD Announce</button>
         </div>
         </Fragment>
     )

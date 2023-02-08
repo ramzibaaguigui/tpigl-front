@@ -19,7 +19,7 @@ function ProductDescriptionSection({sendData}) {
             <SectionHeader number={'01'} title={"Description de l'article"} />
             
 
-            <TextInputField 
+            <TextInputField
             placeholder={"Description de l'article"}
             onTextChange={onDescriptionChanged} />
 
